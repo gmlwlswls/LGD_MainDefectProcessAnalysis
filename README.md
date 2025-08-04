@@ -7,26 +7,27 @@ LG디스플레이 공정 데이터를 활용하여 주요 공정을 도출하고
 ## 📁 파일 구조
 
 ├── 00. 데이터 탐색
-│ └── 공정 축소.ipynb # 공정명 정리 후 결합
-│ └── 데이터 탐색 # 데이터 분포 및 이상치 확인
+│ ├── 공정 축소.ipynb # 공정명 정리 후 결합
+│ └── 데이터 탐색.ipynb # 데이터 분포 및 이상치 확인
 
 ├── 01. 데이터 전처리
 │ └── 데이터 전처리.ipynb # 결측치 처리
 
 ├── 02. 주요 공정 분석
-│ ├── Left
-│ │ └── 00. MainProcess.ipynb # 주요 공정별 타겟 평균 확인
-│ │ └── 1. Lasso.ipynb # 랏소 회귀를 활용한 불량 예측 모델
-│ │ └── 2. RandomForest.ipynb # 랜덤포레스트를 활용한 불량 예측 모델
-│ │ └── 3. XGBoost.ipynb # xgboost를 활용한 불량 예측 모델
+│ └── Left/
+│ ├── 00. MainProcess.ipynb # 주요 공정별 타겟 평균 확인
+│ ├── 1. Lasso.ipynb # Lasso 회귀를 활용한 불량 예측 모델
+│ ├── 2. RandomForest.ipynb # 랜덤 포레스트 기반 예측 모델
+│ └── 3. XGBoost.ipynb # XGBoost 기반 예측 모델
 
-├── data
-│ └── factory_glass_2016.csv # 원본 공정 데이터
-│ └── cleaned_process_mean_df.csv # 공정명 정돈 및 그룹화한 데이터
-│ └── cleaned_process_split_df.csv # 공정명 정돈 및 분할 저장한 공정명 데이터
-│ └── main_process_df.csv # 주요 공정 데이터
-│ └── process_nm_split.csv # 원본 공정 데이터
-│ └── prp_factory_glass_2016.csv # 전처리한 분석용 데이터
+├── data/
+│ ├── factory_glass_2016.csv # 원본 공정 데이터
+│ ├── cleaned_process_mean_df.csv # 공정명 정돈 및 그룹화 데이터
+│ ├── cleaned_process_split_df.csv # 공정명 정돈 및 분할 저장 데이터
+│ ├── main_process_df.csv # 주요 공정 데이터
+│ ├── process_nm_split.csv # 공정명 분리 정보
+│ └── prp_factory_glass_2016.csv # 전처리된 분석용 데이터
+
 └── README.md # 프로젝트 설명 문서
 
 ---
@@ -43,4 +44,20 @@ LG디스플레이 공정 데이터를 활용하여 주요 공정을 도출하고
   이상치 빈도를 시간/요일/월 단위로 집계하여 고위험 구간 파악
 
 ---
+
+## 🛠 사용 기술 스택
+
+- **언어 및 라이브러리**
+  - Python 3.11
+  - pandas, numpy
+  - matplotlib, seaborn
+  - scikit-learn
+  - xgboost
+
+
+  ## 📌 주요 성과
+
+- 전체 800여 개의 공정 데이터를 197 개의 주요 공정으로 축소
+- 주요 공정 기반 이상치 분석으로 요일 및 월별 고위험 구간 식별
+- XGBoost 기반 예측 모델로 테스트 R² 최대 60% 이상 확보
 
