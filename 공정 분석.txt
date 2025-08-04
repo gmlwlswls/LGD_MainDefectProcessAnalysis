@@ -1,0 +1,18 @@
+[LG디스플레이 공장 불량 분석 프로젝트]
+
+LAST 10 COLUMNS)
+ROLLDOWN.진공패드.폐기율.LEFT = (ROLLDOWN.폐기.LEFT + 진공패드.폐기.LEFT.) / 투입.LEFT 
+ROLLDOWN.진공패드.폐기율.RIGHT = (ROLLDOWN.폐기.RIGHT + 진공패드.폐기.RIGHT) / 투입.RIGHT 
+
+L.RD = 폐기율을 표준화한 데이터
+L.Vac = 표준화한 폐기율의 분산
+
+- 센서명
+1WSI40101 : 일반적인 센서 ID
+1WSI40101.PV : 센서의 Process Value - 센서가 측정한 실제값
+(1WSI40101센서의 특정 측정 항목)
+1WSI40101.1 : 채널 번호/하위 측정 포인트/샘플링 구분
+
+
+공정명 - LEFT/ RIGHT구분 찾기** 
+MTR : 제조사 기술 담당자 
